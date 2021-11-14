@@ -36,6 +36,7 @@ public class ReservationController {
     public Reservation update(@RequestBody Reservation reservation){
         return reservationService.update(reservation);
     }
+    
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public boolean delete(@PathVariable("id")int idReservation){
@@ -46,6 +47,7 @@ public class ReservationController {
         return reservationService.getReservationStatusReport();
     }
     @GetMapping("/report-date/{dateOne}/{dateTwo}")
+
     public List<Reservation> getReservationsReportDates(@PathVariable("dateOne")String dateOne,@PathVariable("dateTwo")String dateTwo){
         return reservationService.getReservationPeriod(dateOne,dateTwo);
     }
